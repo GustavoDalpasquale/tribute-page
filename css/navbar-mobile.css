@@ -4,7 +4,7 @@
 
 @media (max-width: 800px){
   .navbar{
-    background: rgba(31, 38, 47, 0.97);
+    background: linear-gradient(135deg, #1F262F, rgba(98, 120, 148, 0.1));
     position: fixed;
     top: 0;
     width: 100%;

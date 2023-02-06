@@ -1,6 +1,112 @@
 .teams{
+  background: linear-gradient(135deg, #1F262F, rgba(98, 120, 148, 0.2));
   margin: 20px 70px;
   box-shadow: 1px 1px 5px black;
-  border-radius: 6px;
+  border-radius: 8px;
+}
+
+.teams-title{
+  display: flex;
+  margin-left: 30px;
+  color: #DCDCDC;
+  font-size: 1.3rem;
+}
+
+
+/*Images custom controls*/
+.slide-teams ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  align-items: center;
+}
+
+.slide-teams img {
+  display: block;
+  max-width: 100%;
+}
+
+.slide-wrapper {
+  overflow-x: hidden;
+}
+
+
+.custom-controls{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.custom-controls li{
+  opacity: 0.8;
+  transform: scale(0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 2px;
+  box-shadow: 0 2px 2px rgba(98, 120, 148, 0.2);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.custom-controls li.active{
+  box-shadow: 0 2px 2px #FFDD00;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*Images*/
+
+.slide {
   display: flex;
 }
+
+.slide:hover {
+  will-change: transform;
+}
+
+.slide li {
+  flex-shrink: 0;
+  width: 80vw;
+  max-width: 800px;
+  margin: 20px 20px;
+  padding: 20px;
+
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: .8;
+  transform: scale(.8);
+  transition: .4s;
+}
+
+.slide li.active {
+  opacity: 1;
+  transform: scale(1);
+  background: rgba(98, 120, 148, 0.2);
+}
+
+
+[data-control='slide']{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+[data-control='slide'] li a{
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: #FFDD00;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: -999px;
+  margin: 5px;
+}
+
+[data-control='slide'] li.active a, [data-control='slide'] li a:hover{
+  background: #FFDD00;
+}
+

@@ -1,11 +1,12 @@
 .navbar{
+  background: linear-gradient(135deg, #1F262F, rgba(98, 120, 148, 0.1));
   font-weight: bold;
   font-size: 1.5rem;
   height: 60px;
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 0px 10px black;
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 .navbar-img img{
@@ -13,8 +14,9 @@
   width: 40px;
   margin-top: 10px;
   margin-left: 50px;
-  border-radius: 4px;
+  border-radius: 8px;
   transition: 0.3s;
+  animation: show-left 0.3s forwards;
 }
 
 .navbar-img img:hover{
@@ -34,6 +36,7 @@
 
 .navbar li{
   padding: 20px;
+  animation: show-down 0.3s forwards;
 }
 
 .navbar a{
@@ -45,4 +48,28 @@
 .navbar a:hover{
   color: #FFDD00;
   font-size: 1.6rem;
+}
+
+/*Keyframes*/
+
+@keyframes show-down{
+  from{
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes show-left{
+  from{
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
