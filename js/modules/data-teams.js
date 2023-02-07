@@ -1,7 +1,7 @@
 export default function DataTeams(div, indexLi) {
   const divInfo = document.querySelector(div);
 
-  fetch("../data.json")
+  fetch("../../data.json")
     .then((response) => response.json())
     .then((data) => {
       const divSpan = document.createElement("div");
