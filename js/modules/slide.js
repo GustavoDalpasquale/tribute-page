@@ -1,4 +1,5 @@
 import debounce from "./debounce.js";
+import DataTeams from "./data-teams.js";
 
 export class Slide {
   constructor(slide, wrapper) {
@@ -62,6 +63,7 @@ export class Slide {
     } else {
       this.changeSlide(this.index.active);
     }
+    DataTeams(".info-team", this.index.active);
   }
 
   addSlideEvents() {
@@ -137,7 +139,7 @@ export class Slide {
     this.activePrevSlide = this.activePrevSlide.bind(this);
     this.activeNextSlide = this.activeNextSlide.bind(this);
 
-    this.onResize = debounce(this.onResize.bind(this), 200);
+    this.onResize = debounce(this.onResize.bind(this), 100);
   }
 
   init() {
@@ -147,6 +149,7 @@ export class Slide {
     this.slidesConfig();
     this.addResizeEvent();
     this.changeSlide(0);
+    DataTeams(".info-team", 0);
     return this;
   }
 }
@@ -193,6 +196,7 @@ export default class SlideNav extends Slide {
       item.classList.remove(this.activeClass)
     );
     this.controlArray[this.index.active].classList.add(this.activeClass);
+    DataTeams(".info-team", this.index.active);
   }
 
   addControl(customControl) {

@@ -1,3 +1,14 @@
+[data-anime="scroll"]{
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+}
+
+[data-anime="scroll"].active{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: 0.5s;
+}
+
 .teams{
   background: linear-gradient(135deg, #1F262F, rgba(98, 120, 148, 0.2));
   margin: 20px 70px;
@@ -8,8 +19,13 @@
 .teams-title{
   display: flex;
   margin-left: 30px;
+  margin-right: 30px;
   color: #DCDCDC;
   font-size: 1.3rem;
+  justify-content: center;
+}
+.teams-title h1{
+  border-bottom: 2px solid rgba(98, 120, 148, 0.5);
 }
 
 
@@ -18,7 +34,6 @@
   padding: 0px;
   margin: 0px;
   list-style: none;
-  align-items: center;
 }
 
 .slide-teams img {
@@ -47,7 +62,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin: 2px;
-  box-shadow: 0 2px 2px rgba(98, 120, 148, 0.2);
+  box-shadow: 0 2px 2px rgba(255, 255, 255, 0.5);
   transition: 0.3s;
   cursor: pointer;
 }
@@ -57,6 +72,29 @@
   opacity: 1;
   transform: scale(1);
 }
+
+
+[data-control='slide']{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+[data-control='slide'] li a{
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: #FFDD00;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: -999px;
+  margin: 5px;
+}
+
+[data-control='slide'] li.active a, [data-control='slide'] li a:hover{
+  background: #FFDD00;
+}
+
 
 /*Images*/
 
@@ -82,31 +120,96 @@
   transition: .4s;
 }
 
+.slide li img{
+  width: 100%;
+  height: 500px;
+  margin-bottom: 30px;
+}
+
 .slide li.active {
   opacity: 1;
   transform: scale(1);
   background: rgba(98, 120, 148, 0.2);
 }
 
-
-[data-control='slide']{
+.info-team div{
+  position: relative;
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  flex-direction: column;
+  text-align: center;
+  background: #1F262F;
+  border-radius:  0px 0px 8px 8px;
+  top: 2px;
 }
 
-[data-control='slide'] li a{
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: #FFDD00;
-  border-radius: 50%;
-  overflow: hidden;
-  text-indent: -999px;
-  margin: 5px;
+.info-team div span{
+  background: rgba(98, 120, 148, 0.015);
+  color: #DCDCDC;
+  font-size: 1.125em;
+  animation: opacity 0.1s forwards alternate;
+
+}
+.info-team div span::before{
+  content: '↪';
+  color: #FFDD00;
+  display: inline-block;
+  margin-right: 5px;
+  animation: show-left 0.5s forwards alternate;
 }
 
-[data-control='slide'] li.active a, [data-control='slide'] li a:hover{
-  background: #FFDD00;
+@media (max-width: 700px){
+  .teams{
+    position: relative;
+    flex-wrap: wrap;
+    margin: 100px 50px;
+    scroll-margin-top: 80px;
+  }
+  
+  .teams-content{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .slide li img{
+    width: 100%;
+    height: 300px;
+    margin: 0px;
+  }
+  .info-team div{
+    top: 0px;
+    border-radius: 0px;
+  }
 }
 
+/*Keyframes*/
+
+@keyframes show-left{
+  from{
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes opacity{
+  0%{
+    opacity: 0;
+  }
+  20%{
+    opacity: 0.2;
+  }
+  40%{
+    opacity: 0.4;
+  }
+  60%{
+    opacity: 0.6;
+  }
+  80%{
+    opacity: 0.8;
+  }
+  100%{
+    opacity: 1;
+  }
+}

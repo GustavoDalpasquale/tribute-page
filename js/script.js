@@ -19,3 +19,6 @@ scrollSmooth.init();
 const slide = new Slide(".slide", ".slide-wrapper");
 slide.init();
 slide.addControl(".custom-controls");
+
+// const dataTeams = new DataTeams(".slide li", ".info-team");
+// dataTeams.init(slide.index.active);

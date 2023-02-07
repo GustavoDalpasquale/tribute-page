@@ -13,11 +13,6 @@
   font-size: 1.3rem;
 }
 
-.about-title .title-word-1{
-  display: block;
-  animation: show-up 0.1s forwards;
-}
-
 .about-title .title-word-2{
   margin-left: 10px;
   color: #FFDD00;
@@ -38,7 +33,7 @@
 }
 
 .about-img img.img-fallen{
-  animation: opacity 0.5s forwards, shadow 1s 0.5s forwards;
+  animation: opacity 0.5s forwards, shadow 2s 2s forwards;
 }
 
 .about-img .official-img{
